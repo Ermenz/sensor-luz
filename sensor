@@ -1,0 +1,32 @@
+// C++ code
+// Erick Menezes
+
+int led = 3;
+int sensor = A1;
+int valorSensor = 0;
+ 
+
+void setup(){
+  pinMode (led, OUTPUT);
+   Serial.begin (9600);
+
+ 
+}
+void loop(){
+  valorSensor = analogRead (sensor);
+  Serial.println (valorSensor);
+  
+ 
+  delay(100); // Wait for 1000 millisecond(s)
+  
+  
+  if(valorSensor < 600) {
+    digitalWrite (led, HIGH);
+  }else{
+    digitalWrite(led, LOW);
+    
+  }
+  
+ 
+  
+}
